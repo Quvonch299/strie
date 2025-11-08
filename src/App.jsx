@@ -9,12 +9,7 @@ export default function App() {
     try {
       const res = await axios.get(
         "https://api.themoviedb.org/3/discover/movie",
-        {
-          params: {
-            sort_by: "popularity.desc",
-            api_key: "3fd2be6f0c70a2a598f084ddfb75487c",
-          },
-        }
+        {params: { sort_by: "popularity.desc", api_key: "3fd2be6f0c70a2a598f084ddfb75487c", }}
       );
       setMovies(res.data.results);
     } catch (e) {
@@ -61,7 +56,7 @@ export default function App() {
           placeholder="Film nomini yozing..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="px-4 py-2 w-72 rounded-lg text-black focus:outline-none"
+          className="px-4 py-2 w-72 rounded-lg text-black focus:outline-none border placeholder:text-white text-white"
         />
         <button
           type="submit"
